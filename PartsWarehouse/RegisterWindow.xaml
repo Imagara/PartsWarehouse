@@ -1,0 +1,154 @@
+﻿<Window x:Class="PartsWarehouse.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartsWarehouse"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Height="450" 
+        Width="600"
+        Title="Окно регистрации">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Border
+            Background="#252525"
+            MouseDown="Border_MouseDown" 
+            Grid.Row="0">
+
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="PartsWarehouse"
+                       Foreground="Gray"
+                       FontWeight="SemiBold"/>
+
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+
+                    <Button Width="20" 
+                            Height="20"
+                            Content="—"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold" 
+                            Click="ButtonMininize_Click"/>
+
+                    <Button Visibility="Collapsed"
+                            Width="20" Height="20"
+                            Content="☐"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="WindowStateButton_Click"/>
+
+
+                    <Button Width="20" Height="20"
+                            Content="X"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="CloseButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Background="#32353B" Grid.Row="1">
+            <Grid Margin="30,20,30,20"
+                  Background="#2F3136">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="211*"/>
+                    <RowDefinition Height="74*"/>
+                </Grid.RowDefinitions>
+                <StackPanel
+            Grid.Row="0"
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+                    <Label 
+                Content="Email:" 
+                Foreground="{StaticResource TextColor}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Height="40" 
+                Width="240"
+                FontSize="20"/>
+                    <TextBox x:Name="EmailBox" 
+                             Background="#323338"
+                             Foreground="{StaticResource TextColor}"
+                             BorderBrush="Black"
+                HorizontalAlignment="Left" 
+                TextWrapping="Wrap" 
+                VerticalAlignment="Top" 
+                Height="40" 
+                Width="240"
+                FontSize="20"/>
+                    <Label 
+                Content="Логин:" 
+                Foreground="{StaticResource TextColor}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Height="40" 
+                Width="240"
+                FontSize="20"/>
+                    <TextBox x:Name="NickNameBox" 
+                             Background="#323338"
+                             Foreground="{StaticResource TextColor}"
+                             BorderBrush="Black"
+                             HorizontalAlignment="Left" 
+                             TextWrapping="Wrap" 
+                             VerticalAlignment="Top" 
+                             Height="40" 
+                             Width="240"
+                             FontSize="20"/>
+                    <Label 
+                Content="Пароль:" 
+                Foreground="{StaticResource TextColor}"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Height="40" 
+                Width="240"
+                FontSize="20"/>
+                    <PasswordBox x:Name="PassBox" 
+                                 Background="#323338"
+                                 Foreground="{StaticResource TextColor}"
+                                 BorderBrush="Black"
+                                 HorizontalAlignment="Left" 
+                                 VerticalAlignment="Top" 
+                                 Height="40" 
+                                 Width="240"
+                                 FontSize="20"/>
+                </StackPanel>
+                <StackPanel
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+                    Grid.Row="1">
+                    <Button 
+                x:Name="BackButton" 
+                Content="Назад"
+                Height="40" 
+                Width="150"
+                Margin="0,0,15,0"
+                FontSize="20"
+                Click="BackButton_Click"/>
+                    <Button 
+                x:Name="RegButton" 
+                Content="Регистрация"
+                Height="40" 
+                Width="150" 
+                Margin="15,0,0,0"
+                FontSize="20"
+                Click="RegButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

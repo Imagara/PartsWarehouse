@@ -1,0 +1,9 @@
+﻿<Application x:Class="PartsWarehouse.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PartsWarehouse"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary Source="Styles/Style.xaml"/>
+    </Application.Resources>
+</Application>
