@@ -85,11 +85,15 @@
       <DependentUpon>ErrorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="ImagesManip.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Parts.cs">
       <DependentUpon>EDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartsPage.xaml.cs">
+      <DependentUpon>PartsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Profile.cs" />
     <Compile Include="RegisterWindow.xaml.cs">
@@ -98,6 +102,9 @@
     <Compile Include="Styles\Style.cs" />
     <Compile Include="User.cs">
       <DependentUpon>EDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="СatalogPage.xaml.cs">
+      <DependentUpon>СatalogPage.xaml</DependentUpon>
     </Compile>
     <Page Include="ErrorWindow.xaml">
       <SubType>Designer</SubType>
@@ -119,11 +126,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PartsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegisterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СatalogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,9 +188,11 @@
       <DependentUpon>EDM.edmx</DependentUpon>
       <LastGenOutput>EDM.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\NotFound.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
