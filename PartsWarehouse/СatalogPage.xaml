@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PartsWarehouse"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="СatalogPage">
+      d:DesignHeight="421"
+      d:DesignWidth="634">
 
-    <Grid>
+    <Grid Background="#32353B">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
-        <Border CornerRadius="15" Background="red" Margin="5">
+        <Border CornerRadius="15" Background="#2F3136" Margin="5">
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -22,7 +22,8 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Orientation="Horizontal"
-                        Grid.Row="0">
+                            Grid.Row="0"
+                            HorizontalAlignment="Center">
                     <ComboBox Name="CarCompanyCombo"
                               Margin="5"
                               Width="120"
@@ -47,16 +48,11 @@
                       Width="120">
 
                     </ComboBox>
-
-                    <ComboBox Name="PartManufacturerCombo"
-                      Margin="5"
-                      Width="120">
-
-                    </ComboBox>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal"
-                            Grid.Row="1">
+                            Grid.Row="1"
+                            HorizontalAlignment="Center">
                     <ComboBox Name="NameCombo"
                               Margin="5"
                               Width="120"
@@ -76,11 +72,12 @@
 
                     </ComboBox>
 
-                    <ComboBox Name="PartNumCombo"
-                      Margin="5"
-                      Width="120">
+                    <Button Name="FindPartButton"
+                            Margin="5"
+                            Width="120"
+                            Content="Поиск">
 
-                    </ComboBox>
+                    </Button>
 
                 </StackPanel>
 

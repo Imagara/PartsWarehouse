@@ -84,7 +84,8 @@
                 </Button>
                 <Button Height="30"
                         Margin="5"
-                        Content="Профиль">
+                        Content="Профиль"
+                        Click="ProfileButton">
 
                 </Button>
             </StackPanel>

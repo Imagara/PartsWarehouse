@@ -46,5 +46,10 @@ namespace PartsWarehouse
         {
             Application.Current.Shutdown();
         }
+
+        private void ProfileButton(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new ProfilePage();
+        }
     }
 }

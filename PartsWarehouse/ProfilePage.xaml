@@ -42,10 +42,9 @@
                                      Background="{x:Null}"/>
                         </StackPanel>
                         <Button Width="80"
-                            Content="Изменить"
-                            Margin="0,18,0,0"
-                            HorizontalAlignment="Right"
-                                Click="EmailButton_Click">
+                                Content="Изменить"
+                                Margin="0,18,0,0"
+                                HorizontalAlignment="Right">
                         </Button>
                     </StackPanel>
 
@@ -70,8 +69,7 @@
                         <Button Width="80"
                             Content="Изменить"
                             Margin="0,18,0,0"
-                            HorizontalAlignment="Right"
-                                Click="DateButton_Click">
+                            HorizontalAlignment="Right">
                         </Button>
                     </StackPanel>
 
