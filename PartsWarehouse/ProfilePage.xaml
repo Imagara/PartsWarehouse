@@ -1,0 +1,82 @@
+﻿<Page x:Class="PartsWarehouse.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PartsWarehouse"
+      mc:Ignorable="d" 
+      d:DesignHeight="421"
+      d:DesignWidth="634"
+      Title="ChatPage">
+
+    <Grid Background="#32353B">
+        <Grid Background="#2F3136"
+              Grid.RowSpan="2"
+              Margin="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160*"/>
+                <RowDefinition Height="180*"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="0"
+                  Background="#FF44464D"
+                  Margin="20">
+                <StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Height="40"
+                                VerticalAlignment="Top"
+                                Margin="7">
+                        <StackPanel Orientation="Vertical"
+                                    Width="420">
+                            <Label Content="Логин"
+                               Foreground="#FFC9C7C7"/>
+                            <TextBox x:Name="EmailBox"
+                                     Text="UserLogin"
+                                     Margin="3,-5,0,0"
+                                     Height="30"
+                                     Foreground="{StaticResource TextColor}" 
+                                     BorderBrush="{x:Null}"
+                                     SelectionBrush="{x:Null}"
+                                     Background="{x:Null}"/>
+                        </StackPanel>
+                        <Button Width="80"
+                            Content="Изменить"
+                            Margin="0,18,0,0"
+                            HorizontalAlignment="Right"
+                                Click="EmailButton_Click">
+                        </Button>
+                    </StackPanel>
+
+
+                    <StackPanel Orientation="Horizontal"
+                            Height="40"
+                            VerticalAlignment="Top"
+                            Margin="7">
+                        <StackPanel Orientation="Vertical"
+                                    Width="420">
+                            <Label Content="Пароль"
+                                   Foreground="#FFC9C7C7"/>
+                            <TextBox x:Name="BirthdayBox"
+                               Text="***********"
+                               Margin="3,-5,0,0"
+                               Height="30"
+                                     Foreground="{StaticResource TextColor}" 
+                             BorderBrush="{x:Null}"
+                             SelectionBrush="{x:Null}"
+                             Background="{x:Null}"/>
+                        </StackPanel>
+                        <Button Width="80"
+                            Content="Изменить"
+                            Margin="0,18,0,0"
+                            HorizontalAlignment="Right"
+                                Click="DateButton_Click">
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

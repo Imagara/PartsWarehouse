@@ -4,9 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a983730c88db49b8acf871fd319e858a" Name="Diagram1" ZoomLevel="126">
-        <EntityTypeShape EntityType="PartsWarehouseDataBaseModel.Parts" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PartsWarehouseDataBaseModel.User" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="a983730c88db49b8acf871fd319e858a" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="PartsWarehouseDataBaseModel.Car" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="PartsWarehouseDataBaseModel.Parts" Width="1.5" PointX="2.75" PointY="5.125" />
+        <EntityTypeShape EntityType="PartsWarehouseDataBaseModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.25" />
+        <EntityTypeShape EntityType="PartsWarehouseDataBaseModel.User" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="PartsWarehouseDataBaseModel.UserCar" Width="1.5" PointX="3" PointY="2.5" />
+        <AssociationConnector Association="PartsWarehouseDataBaseModel.FK_Parts_Car" />
+        <AssociationConnector Association="PartsWarehouseDataBaseModel.FK_UserCar_Car" />
+        <AssociationConnector Association="PartsWarehouseDataBaseModel.FK_UserCar_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

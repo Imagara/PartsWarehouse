@@ -12,19 +12,12 @@ namespace PartsWarehouse
     using System;
     using System.Collections.Generic;
     
-    public partial class Parts
+    public partial class sysdiagrams
     {
-        public int IdPart { get; set; }
-        public int IdCar { get; set; }
-        public string Type { get; set; }
-        public string Name { get; set; }
-        public string Model { get; set; }
-        public string Manufacturer { get; set; }
-        public string Description { get; set; }
-        public byte[] Image { get; set; }
-        public int Remain { get; set; }
-        public double Price { get; set; }
-    
-        public virtual Car Car { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

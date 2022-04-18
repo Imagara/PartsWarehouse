@@ -1,7 +1,8 @@
 ﻿namespace PartsWarehouse
 {
-    public class Profile
+    public class Session
     {
         public static int userId { get; set; }
+        public static int carId { get; set; }
     }
 }

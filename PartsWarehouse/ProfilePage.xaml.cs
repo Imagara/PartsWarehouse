@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace PartsWarehouse
 {
     /// <summary>
-    /// Логика взаимодействия для СatalogPage.xaml
+    /// Логика взаимодействия для ProfilePage.xaml
     /// </summary>
-    public partial class СatalogPage : Page
+    public partial class ProfilePage : Page
     {
-        public СatalogPage(string carCompany = null, string carName = null, string carGeneration = null)
+        public ProfilePage()
         {
             InitializeComponent();
-            if(carCompany != null && carName != null)
-            {
-                CarCompanyCombo.Text = carCompany;
-                CarNameCombo.Text = carName;
-                CarGenerationCombo.Text = carGeneration;
-            }
         }
     }
 }

@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:PartsWarehouse"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Height="450" 
+        Height="350" 
         Width="600"
-        Title="Окно регистрации">
+        Title="Окно входа"
+        WindowStyle="None">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -72,24 +72,6 @@
             Orientation="Vertical"
             VerticalAlignment="Center"
             HorizontalAlignment="Center">
-                    <Label 
-                Content="Email:" 
-                Foreground="{StaticResource TextColor}"
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Height="40" 
-                Width="240"
-                FontSize="20"/>
-                    <TextBox x:Name="EmailBox" 
-                             Background="#323338"
-                             Foreground="{StaticResource TextColor}"
-                             BorderBrush="Black"
-                HorizontalAlignment="Left" 
-                TextWrapping="Wrap" 
-                VerticalAlignment="Top" 
-                Height="40" 
-                Width="240"
-                FontSize="20"/>
                     <Label 
                 Content="Логин:" 
                 Foreground="{StaticResource TextColor}"

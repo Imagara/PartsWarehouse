@@ -25,7 +25,10 @@ namespace PartsWarehouse
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Car> Car { get; set; }
         public virtual DbSet<Parts> Parts { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserCar> UserCar { get; set; }
     }
 }

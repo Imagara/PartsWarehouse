@@ -12,19 +12,23 @@ namespace PartsWarehouse
     using System;
     using System.Collections.Generic;
     
-    public partial class Parts
+    public partial class Car
     {
-        public int IdPart { get; set; }
-        public int IdCar { get; set; }
-        public string Type { get; set; }
-        public string Name { get; set; }
-        public string Model { get; set; }
-        public string Manufacturer { get; set; }
-        public string Description { get; set; }
-        public byte[] Image { get; set; }
-        public int Remain { get; set; }
-        public double Price { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Car()
+        {
+            this.Parts = new HashSet<Parts>();
+            this.UserCar = new HashSet<UserCar>();
+        }
     
-        public virtual Car Car { get; set; }
+        public int IdCar { get; set; }
+        public string Company { get; set; }
+        public string Name { get; set; }
+        public int Generation { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Parts> Parts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserCar> UserCar { get; set; }
     }
 }

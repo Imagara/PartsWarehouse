@@ -25,11 +25,7 @@ namespace PartsWarehouse
         {
             try
             {
-                if (!Functions.IsValidEmail(EmailBox.Text))
-                    new ErrorWindow("Email введен неверно.").Show();
-                else if (Functions.IsEmailAlreadyTaken(EmailBox.Text))
-                    new ErrorWindow("Данный email уже используется.").Show();
-                else if (!Functions.IsValidLength(NickNameBox.Text.Trim()))
+                if (!Functions.IsValidLength(NickNameBox.Text.Trim()))
                     new ErrorWindow("Поле «Логин» должно содержать не менее 5 символов.").Show();
                 else if (!Functions.IsValidLength(PassBox.Password.Trim()))
                     new ErrorWindow("Поле «Пароль» должно содержать не менее 5 символов.").Show();
@@ -41,10 +37,9 @@ namespace PartsWarehouse
                 {
                     User newUser = new User()
                     {
-                        Id = cnt.db.User.Select(p => p.Id).DefaultIfEmpty(0).Max() + 1,
+                        IdUser = cnt.db.User.Select(p => p.IdUser).DefaultIfEmpty(0).Max() + 1,
                         Login = NickNameBox.Text,
                         Password = Encrypt.GetHash(PassBox.Password),
-                        Email = EmailBox.Text,
                     };
                     cnt.db.User.Add(newUser);
                     cnt.db.SaveChanges(); ;

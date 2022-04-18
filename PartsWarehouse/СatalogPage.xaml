@@ -9,13 +9,96 @@
       Title="СatalogPage">
 
     <Grid>
-        <ComboBox>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="15" Background="red" Margin="5">
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal"
+                        Grid.Row="0">
+                    <ComboBox Name="CarCompanyCombo"
+                              Margin="5"
+                              Width="120"
+                              Text="Марка">
+
+                    </ComboBox>
+
+                    <ComboBox Name="CarNameCombo"
+                      Margin="5"
+                      Width="120">
+
+                    </ComboBox>
+                    
+                    <ComboBox Name="CarGenerationCombo"
+                      Margin="5"
+                      Width="120">
+
+                    </ComboBox>
+
+                    <ComboBox Name="PartTypeCombo"
+                      Margin="5"
+                      Width="120">
+
+                    </ComboBox>
+
+                    <ComboBox Name="PartManufacturerCombo"
+                      Margin="5"
+                      Width="120">
+
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            Grid.Row="1">
+                    <ComboBox Name="NameCombo"
+                              Margin="5"
+                              Width="120"
+                              Text="Марка">
+
+                    </ComboBox>
+
+                    <ComboBox Name="ModelCombo"
+                      Margin="5"
+                      Width="120">
+
+                    </ComboBox>
+
+                    <ComboBox Name="OriginalCombo"
+                      Margin="5"
+                      Width="120">
+
+                    </ComboBox>
+
+                    <ComboBox Name="PartNumCombo"
+                      Margin="5"
+                      Width="120">
+
+                    </ComboBox>
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+
+        
+        <Grid Grid.Row="1">
+            
+        </Grid>
+
+        <!--<ComboBox Grid.RowSpan="2">
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Vertical" Height="100" />
                 </ItemsPanelTemplate>
             </ComboBox.ItemsPanel>
-            
+
             <ComboBoxItem Content="Value 1" />
             <ComboBoxItem Content="Value 2" />
             <ComboBoxItem Content="Value 3" />
@@ -31,7 +114,7 @@
             <ComboBoxItem Content="Value 13" />
             <ComboBoxItem Content="Value 14" />
             <ComboBoxItem Content="Value 15" />
-            
-        </ComboBox>
+
+        </ComboBox>-->
     </Grid>
 </Page>

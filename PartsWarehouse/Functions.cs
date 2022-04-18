@@ -9,32 +9,6 @@ namespace PartsWarehouse
 {
     public class Functions
     {
-        // Валидация номера телефона
-        public static bool IsValidPhoneNumber(string phoneNumber)
-        {
-            foreach (char c in phoneNumber)
-                if (!char.IsDigit(c))
-                    return false;
-            if (phoneNumber.Length != 11)
-                return false;
-            return true;
-        }
-        // Валидация электронной почты
-        public static bool IsValidEmail(string email)
-        {
-            if (Regex.IsMatch(email, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
-                return true;
-            else
-                return false;
-        }
-        // Валидация дня рождения
-        public static bool IsValidDateOfBirthday(DateTime Date)
-        {
-            if (Date > DateTime.Now)
-                return false;
-            else
-                return true;
-        }
         // Валидация логина и пароля при входе
         public static bool IsValidLogAndPass(string login, string password)
         {
@@ -83,16 +57,6 @@ namespace PartsWarehouse
         {
             //return cnt.db.Chat.Where(item => item.Name == chatName).Select(item => item.IdChat).FirstOrDefault();
             return 0;
-        }
-        // Проверка на уникальность электронной почты
-        public static bool IsEmailAlreadyTaken(string Email)
-        {
-            return cnt.db.User.Select(item => item.Email).Contains(Email);
-        }
-        // Проверка на уникальность электронной почты
-        public static bool IsPhoneNumberAlreadyTaken(string Phone)
-        {
-            return cnt.db.User.Select(item => item.PhoneNumber).Contains(Phone);
         }
     }
 }

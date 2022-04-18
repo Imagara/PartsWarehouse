@@ -27,7 +27,7 @@ namespace PartsWarehouse
                     new ErrorWindow("Неверный логин или пароль").Show();
                 else
                 {
-                    Profile.userId = cnt.db.User.Where(item => item.Login == LogBox.Text).Select(item => item.Id).FirstOrDefault();
+                    Session.userId = cnt.db.User.Where(item => item.Login == LogBox.Text).Select(item => item.IdUser).FirstOrDefault();
                     new MainWindow().Show();
                     this.Close();
                 }
