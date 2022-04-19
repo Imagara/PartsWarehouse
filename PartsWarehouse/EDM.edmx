@@ -20,11 +20,13 @@
           </Key>
           <Property Name="IdPart" Type="int" Nullable="false" />
           <Property Name="IdCar" Type="int" Nullable="false" />
+          <Property Name="PartNum" Type="int" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Manufacturer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Original" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Image" Type="varbinary(max)" Nullable="false" />
           <Property Name="Remain" Type="int" Nullable="false" />
           <Property Name="Price" Type="float" Nullable="false" />
@@ -160,6 +162,8 @@
           <Property Name="Remain" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Double" Nullable="false" />
           <NavigationProperty Name="Car" Relationship="PartsWarehouseDataBaseModel.FK_Parts_Car" FromRole="Parts" ToRole="Car" />
+          <Property Name="PartNum" Type="Int32" Nullable="false" />
+          <Property Name="Original" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -246,6 +250,8 @@
           <EntitySetMapping Name="Parts">
             <EntityTypeMapping TypeName="PartsWarehouseDataBaseModel.Parts">
               <MappingFragment StoreEntitySet="Parts">
+                <ScalarProperty Name="Original" ColumnName="Original" />
+                <ScalarProperty Name="PartNum" ColumnName="PartNum" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Remain" ColumnName="Remain" />
                 <ScalarProperty Name="Image" ColumnName="Image" />

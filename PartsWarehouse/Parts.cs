@@ -24,6 +24,8 @@ namespace PartsWarehouse
         public byte[] Image { get; set; }
         public int Remain { get; set; }
         public double Price { get; set; }
+        public int PartNum { get; set; }
+        public string Original { get; set; }
     
         public virtual Car Car { get; set; }
     }

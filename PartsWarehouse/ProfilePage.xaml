@@ -36,7 +36,6 @@
                                      Text="UserLogin"
                                      Margin="3,-5,0,0"
                                      Height="30"
-                                     Foreground="{StaticResource TextColor}" 
                                      BorderBrush="{x:Null}"
                                      SelectionBrush="{x:Null}"
                                      Background="{x:Null}"/>
@@ -75,6 +74,40 @@
 
                 </StackPanel>
             </Grid>
+
+            <ListBox Name="CarsListBox"
+                         Grid.Row="1"
+                         Margin="20"
+                     Background="#32353B"
+                     BorderBrush="#32353B">
+                <ScrollViewer Name="scroll"
+                              VerticalScrollBarVisibility="Visible">
+                </ScrollViewer>
+                <Grid Margin="10,0,10,0"
+                      Height="35"
+                      Width="480"
+                      Background="#FF44464D">
+                    <Label Margin="5"
+                           HorizontalAlignment="Left"
+                           Content="Manufacturer Name 1">
+                    </Label>
+                </Grid>
+                <Grid Margin="10,0,10,0"
+                      Height="35"
+                      Width="480"
+                      Background="#FF44464D">
+                <Button Width="35"
+                        Height="35"
+                        Content="+"
+                        FontSize="16"
+                        FontWeight="Black"
+                        Click="AddNewCar">
+                </Button>
+                    
+                </Grid>
+                
+            </ListBox>
+
         </Grid>
     </Grid>
 </Page>

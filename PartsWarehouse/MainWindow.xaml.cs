@@ -51,5 +51,31 @@ namespace PartsWarehouse
         {
             MainFrame.Content = new ProfilePage();
         }
+
+        private void CatalogButton(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new СatalogPage();
+        }
+
+        private void FindWithVin(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (cnt.db.UserCar.Select(item => item.Vin).Contains(Convert.ToInt32(VinBox.Text)))
+                {
+                    int vin = Convert.ToInt32(VinBox.Text);
+                    Car car = cnt.db.Car.Where(item => item.IdCar == cnt.db.UserCar.Where(uc => uc.Vin == vin).Select(uc => uc.IdCar).FirstOrDefault()).FirstOrDefault();
+                    MainFrame.Content = new СatalogPage(car.Company, car.Name, car.Generation);
+                    new ErrorWindow((car.Company, car.Name, car.Generation).ToString()).ShowDialog();
+                }
+                else
+                    new ErrorWindow("Ничего не найдено.").ShowDialog();
+            }
+            catch
+            {
+
+            }
+
+        }
     }
 }

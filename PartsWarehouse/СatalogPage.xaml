@@ -14,7 +14,9 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
-        <Border CornerRadius="15" Background="#2F3136" Margin="5">
+        <Border CornerRadius="15" 
+                Background="#2F3136" 
+                Margin="5">
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -24,59 +26,74 @@
                 <StackPanel Orientation="Horizontal"
                             Grid.Row="0"
                             HorizontalAlignment="Center">
-                    <ComboBox Name="CarCompanyCombo"
-                              Margin="5"
-                              Width="120"
-                              Text="Марка">
+                    <TextBox Name="CarCompanyBox"
+                             Margin="5"
+                             Width="120"
+                             Text="Марка"
+                             PreviewMouseLeftButtonUp="CarCompanyBox_PreviewMouseLeftButtonUp"
+                             LostFocus="CarCompanyBox_LostFocus">
+                    </TextBox>
 
-                    </ComboBox>
+                    <TextBox Name="CarNameBox"
+                             Margin="5"
+                             Width="120"
+                             Text="Название"
+                             PreviewMouseLeftButtonUp="CarNameBox_PreviewMouseLeftButtonUp"
+                             LostFocus="CarNameBox_LostFocus">
+                    </TextBox>
 
-                    <ComboBox Name="CarNameCombo"
-                      Margin="5"
-                      Width="120">
+                    <TextBox Name="CarGenerationBox"
+                             Margin="5"
+                             Width="120"
+                             Text="Поколение"
+                             PreviewMouseLeftButtonUp="CarGenerationBox_PreviewMouseLeftButtonUp"
+                             LostFocus="CarGenerationBox_LostFocus">
 
-                    </ComboBox>
-                    
-                    <ComboBox Name="CarGenerationCombo"
-                      Margin="5"
-                      Width="120">
+                    </TextBox>
 
-                    </ComboBox>
+                    <TextBox Name="PartTypeBox"
+                             Margin="5"
+                             Width="120"
+                             Text="Тип запчасти"
+                             PreviewMouseLeftButtonUp="PartTypeBox_PreviewMouseLeftButtonUp"
+                             LostFocus="PartTypeBox_LostFocus">
 
-                    <ComboBox Name="PartTypeCombo"
-                      Margin="5"
-                      Width="120">
-
-                    </ComboBox>
+                    </TextBox>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal"
                             Grid.Row="1"
                             HorizontalAlignment="Center">
-                    <ComboBox Name="NameCombo"
+                    <TextBox Name="NameBox"
                               Margin="5"
                               Width="120"
-                              Text="Марка">
+                              Text="Название запчасти"
+                             PreviewMouseLeftButtonUp="NameBox_PreviewMouseLeftButtonUp"
+                             LostFocus="NameBox_LostFocus">
 
-                    </ComboBox>
+                    </TextBox>
 
-                    <ComboBox Name="ModelCombo"
-                      Margin="5"
-                      Width="120">
+                    <TextBox Name="ModelBox"
+                             Margin="5"
+                             Width="120"
+                             Text="Модель"
+                             PreviewMouseLeftButtonUp="ModelBox_PreviewMouseLeftButtonUp"
+                             LostFocus="ModelBox_LostFocus">
+                    </TextBox>
 
-                    </ComboBox>
-
-                    <ComboBox Name="OriginalCombo"
-                      Margin="5"
-                      Width="120">
-
-                    </ComboBox>
+                    <TextBox Name="OriginalBox"
+                             Margin="5"
+                             Width="120"
+                             Text="Оригинал: Не важно"
+                             PreviewMouseLeftButtonUp="OriginalBox_PreviewMouseLeftButtonUp"
+                             LostFocus="OriginalBox_LostFocus">
+                    </TextBox>
 
                     <Button Name="FindPartButton"
                             Margin="5"
                             Width="120"
-                            Content="Поиск">
-
+                            Content="Поиск"
+                            Click="FindPartButton_Click">
                     </Button>
 
                 </StackPanel>
@@ -84,17 +101,20 @@
             </Grid>
         </Border>
 
-        
-        <Grid Grid.Row="1">
-            
-        </Grid>
 
-        <!--<ComboBox Grid.RowSpan="2">
-            <ComboBox.ItemsPanel>
+        <ListBox Name="PartsListBox"
+                 Grid.Row="1" 
+                 Background="#2F3136">
+            <ScrollViewer VerticalScrollBarVisibility="Visible"/>
+
+        </ListBox>
+
+        <!--<TextBox Grid.RowSpan="2">
+            <TextBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Vertical" Height="100" />
                 </ItemsPanelTemplate>
-            </ComboBox.ItemsPanel>
+            </TextBox.ItemsPanel>
 
             <ComboBoxItem Content="Value 1" />
             <ComboBoxItem Content="Value 2" />
@@ -112,6 +132,6 @@
             <ComboBoxItem Content="Value 14" />
             <ComboBoxItem Content="Value 15" />
 
-        </ComboBox>-->
+        </TextBox>-->
     </Grid>
 </Page>

@@ -67,19 +67,20 @@
 
             <StackPanel Background="#292b2f" 
                         Grid.Column="0">
-                <TextBox Height="30"
+                <TextBox Name="VinBox"
+                         Height="30"
                          Margin="5"
                          Text="Vin...">
-                    
                 </TextBox>
                 <Button Height="30"
                         Margin="5"
-                        Content="Поиск">
-                    
+                        Content="Поиск"
+                        Click="FindWithVin">
                 </Button>
                 <Button Height="30"
                         Margin="5"
-                        Content="Каталог">
+                        Content="Каталог"
+                        Click="CatalogButton">
 
                 </Button>
                 <Button Height="30"

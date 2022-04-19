@@ -98,9 +98,6 @@
     <Compile Include="Parts.cs">
       <DependentUpon>EDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="PartsPage.xaml.cs">
-      <DependentUpon>PartsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
@@ -142,10 +139,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PartInfoPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PartsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
