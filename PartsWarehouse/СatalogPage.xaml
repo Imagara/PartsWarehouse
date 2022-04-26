@@ -30,7 +30,7 @@
                              Margin="5"
                              Width="120"
                              Text="Марка"
-                             PreviewMouseLeftButtonUp="CarCompanyBox_PreviewMouseLeftButtonUp"
+                             PreviewMouseDown="CarCompanyBox_PreviewMouseLeftButtonUp"
                              LostFocus="CarCompanyBox_LostFocus">
                     </TextBox>
 
@@ -38,7 +38,7 @@
                              Margin="5"
                              Width="120"
                              Text="Название"
-                             PreviewMouseLeftButtonUp="CarNameBox_PreviewMouseLeftButtonUp"
+                             PreviewMouseDown="CarNameBox_PreviewMouseLeftButtonUp"
                              LostFocus="CarNameBox_LostFocus">
                     </TextBox>
 
@@ -46,7 +46,7 @@
                              Margin="5"
                              Width="120"
                              Text="Поколение"
-                             PreviewMouseLeftButtonUp="CarGenerationBox_PreviewMouseLeftButtonUp"
+                             PreviewMouseDown="CarGenerationBox_PreviewMouseLeftButtonUp"
                              LostFocus="CarGenerationBox_LostFocus">
 
                     </TextBox>
@@ -55,7 +55,7 @@
                              Margin="5"
                              Width="120"
                              Text="Тип запчасти"
-                             PreviewMouseLeftButtonUp="PartTypeBox_PreviewMouseLeftButtonUp"
+                             PreviewMouseDown="PartTypeBox_PreviewMouseLeftButtonUp"
                              LostFocus="PartTypeBox_LostFocus">
 
                     </TextBox>
@@ -68,7 +68,7 @@
                               Margin="5"
                               Width="120"
                               Text="Название запчасти"
-                             PreviewMouseLeftButtonUp="NameBox_PreviewMouseLeftButtonUp"
+                             PreviewMouseDown="NameBox_PreviewMouseLeftButtonUp"
                              LostFocus="NameBox_LostFocus">
 
                     </TextBox>
@@ -77,7 +77,7 @@
                              Margin="5"
                              Width="120"
                              Text="Модель"
-                             PreviewMouseLeftButtonUp="ModelBox_PreviewMouseLeftButtonUp"
+                             PreviewMouseDown="ModelBox_PreviewMouseLeftButtonUp"
                              LostFocus="ModelBox_LostFocus">
                     </TextBox>
 
@@ -85,7 +85,7 @@
                              Margin="5"
                              Width="120"
                              Text="Оригинал: Не важно"
-                             PreviewMouseLeftButtonUp="OriginalBox_PreviewMouseLeftButtonUp"
+                             PreviewMouseDown="OriginalBox_PreviewMouseLeftButtonUp"
                              LostFocus="OriginalBox_LostFocus">
                     </TextBox>
 
@@ -104,9 +104,9 @@
 
         <ListBox Name="PartsListBox"
                  Grid.Row="1" 
-                 Background="#2F3136">
+                 Background="#2F3136"
+                 BorderBrush="{Binding PartsListBox}">
             <ScrollViewer VerticalScrollBarVisibility="Visible"/>
-
         </ListBox>
 
         <!--<TextBox Grid.RowSpan="2">

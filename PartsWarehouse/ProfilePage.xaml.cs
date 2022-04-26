@@ -66,7 +66,7 @@ namespace PartsWarehouse
         {
 
         }
-        private void AddCar(string company, string name, int generation, int vin)
+        private void AddCar(string company, string name, int generation, string vin)
         {
             Grid messageGrid = new Grid();
             messageGrid.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x44, 0x46, 0x4D));

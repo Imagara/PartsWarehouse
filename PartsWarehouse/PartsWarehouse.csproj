@@ -106,9 +106,6 @@
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="Styles\Style.cs" />
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>EDM.tt</DependentUpon>
     </Compile>
@@ -194,21 +191,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\NotFound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="EDM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EDM.Context.cs</LastGenOutput>
       <DependentUpon>EDM.edmx</DependentUpon>
+      <LastGenOutput>EDM.Context.cs</LastGenOutput>
     </Content>
     <Content Include="EDM.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EDM.edmx</DependentUpon>
       <LastGenOutput>EDM.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resources\NotFound.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

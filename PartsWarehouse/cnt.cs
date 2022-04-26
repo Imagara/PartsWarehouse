@@ -2,6 +2,6 @@
 {
     public class cnt
     {
-        public static PartsWarehouseDataBaseEntities db = new PartsWarehouseDataBaseEntities();
+        public static EDMEntities db = new EDMEntities();
     }
 }

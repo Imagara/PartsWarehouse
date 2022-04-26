@@ -17,7 +17,7 @@ namespace PartsWarehouse
         public int Id { get; set; }
         public int IdUser { get; set; }
         public int IdCar { get; set; }
-        public int Vin { get; set; }
+        public string Vin { get; set; }
     
         public virtual Car Car { get; set; }
         public virtual User User { get; set; }

@@ -94,7 +94,9 @@
             <Grid Grid.Column="1">
                 <Frame Name="MainFrame"
                    NavigationUIVisibility="Hidden"
-                   Background="#36393F"/>
+                   Background="#36393F"
+                       Foreground="#36393F"
+                       BorderBrush="#36393F"/>
             </Grid>
         </Grid>
     </Grid>

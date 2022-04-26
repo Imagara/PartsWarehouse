@@ -13,10 +13,10 @@ namespace PartsWarehouse
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PartsWarehouseDataBaseEntities : DbContext
+    public partial class EDMEntities : DbContext
     {
-        public PartsWarehouseDataBaseEntities()
-            : base("name=PartsWarehouseDataBaseEntities")
+        public EDMEntities()
+            : base("name=EDMEntities")
         {
         }
     
@@ -27,7 +27,6 @@ namespace PartsWarehouse
     
         public virtual DbSet<Car> Car { get; set; }
         public virtual DbSet<Parts> Parts { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserCar> UserCar { get; set; }
     }

@@ -38,7 +38,8 @@ namespace PartsWarehouse
 
         private void CarCompanyBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            CarCompanyBox.Text = "Марка";
+            if (CarCompanyBox.Text == "")
+                CarCompanyBox.Text = "Марка";
         }
 
         private void CarNameBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -48,7 +49,8 @@ namespace PartsWarehouse
 
         private void CarNameBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            CarNameBox.Text = "Название";
+            if (CarNameBox.Text == "")
+                CarNameBox.Text = "Название";
         }
 
         private void CarGenerationBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -58,7 +60,8 @@ namespace PartsWarehouse
 
         private void CarGenerationBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            CarGenerationBox.Text = "Поколение";
+            if (CarGenerationBox.Text == "")
+                CarGenerationBox.Text = "Поколение";
         }
 
         private void PartTypeBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -68,7 +71,8 @@ namespace PartsWarehouse
 
         private void PartTypeBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            PartTypeBox.Text = "Тип запчасти";
+            if (PartTypeBox.Text == "")
+                PartTypeBox.Text = "Тип запчасти";
         }
 
         private void NameBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -78,7 +82,8 @@ namespace PartsWarehouse
 
         private void NameBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            NameBox.Text = "Название запчасти";
+            if (NameBox.Text == "")
+                NameBox.Text = "Название запчасти";
         }
 
         private void ModelBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -88,7 +93,8 @@ namespace PartsWarehouse
 
         private void ModelBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            ModelBox.Text = "Модель";
+            if (ModelBox.Text == "")
+                ModelBox.Text = "Модель";
         }
 
         private void OriginalBox_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -98,7 +104,8 @@ namespace PartsWarehouse
 
         private void OriginalBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            OriginalBox.Text = "Оригинал: Не важно";
+            if (OriginalBox.Text == "")
+                OriginalBox.Text = "Оригинал: Не важно";
         }
 
         private void FindPartButton_Click(object sender, RoutedEventArgs e)
@@ -107,16 +114,39 @@ namespace PartsWarehouse
         }
         private void PartsUpdate()
         {
-            PartsListBox.Items.Clear();
-            foreach (Parts part in cnt.db.Parts.Where(item => item.Car.Company == CarCompanyBox.Text && item.Car.Name == CarNameBox.Text).ToList())
+            try
             {
-                BitmapImage img = new BitmapImage();
-                if (part.Image != null)
-                    img = new BitmapImage(new Uri("../Resources/NotFound.png", UriKind.RelativeOrAbsolute));
-                //else
-                //    img = ImagesManip.NewImage(cnt.db.User.Where(item => item.Id == idAuthor).FirstOrDefault());
-                AddPart(part.Name, part.Description, part.PartNum, img);
+                PartsListBox.Items.Clear();
+                var list = cnt.db.Parts.ToList();
+                if (CarCompanyBox.Text != "Марка")
+                    list = list.Where(item => item.Car.Company == CarCompanyBox.Text).ToList();
+                if (CarNameBox.Text != "Название")
+                    list = list.Where(item => item.Car.Name == CarNameBox.Text).ToList();
+                if (CarGenerationBox.Text != "Поколение")
+                    list = list.Where(item => item.Car.Generation == Convert.ToInt32(CarGenerationBox.Text)).ToList();
+                if (PartTypeBox.Text != "Тип запчасти")
+                    list = list.Where(item => item.Type == PartTypeBox.Text).ToList();
+                if (NameBox.Text != "Название запчасти")
+                    list = list.Where(item => item.Name == NameBox.Text).ToList();
+                if (ModelBox.Text != "Модель")
+                    list = list.Where(item => item.PartNum == Convert.ToInt32(ModelBox.Text)).ToList();
+                if (OriginalBox.Text != "Оригинал: Не важно")
+                    list = list.Where(item => item.Original == OriginalBox.Text).ToList();
+                foreach (Parts part in list)
+                {
+                    BitmapImage img = new BitmapImage();
+                    if (part.Image != null)
+                        img = new BitmapImage(new Uri("../Resources/NotFound.png", UriKind.RelativeOrAbsolute));
+                    //else
+                    //    img = ImagesManip.NewImage(cnt.db.User.Where(item => item.Id == idAuthor).FirstOrDefault());
+                    AddPart(part.Name, part.Description, part.PartNum, img);
+                }
             }
+            catch
+            {
+                new ErrorWindow("биба").ShowDialog();
+            }
+
         }
         private void AddPart(string name, string desc, int partNum, BitmapImage imageSource)
         {
