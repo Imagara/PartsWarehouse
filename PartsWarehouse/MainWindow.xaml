@@ -70,7 +70,9 @@
                 <TextBox Name="VinBox"
                          Height="30"
                          Margin="5"
-                         Text="Vin...">
+                         Text="Vin..."
+                         PreviewMouseDown="VinBox_PreviewMouseDown"
+                         LostFocus="VinBox_LostFocus">
                 </TextBox>
                 <Button Height="30"
                         Margin="5"

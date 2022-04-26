@@ -38,7 +38,7 @@ namespace PartsWarehouse
 
         private void CarCompanyBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (CarCompanyBox.Text == "")
+            if (CarCompanyBox.Text.Trim() == "")
                 CarCompanyBox.Text = "Марка";
         }
 
@@ -49,7 +49,7 @@ namespace PartsWarehouse
 
         private void CarNameBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (CarNameBox.Text == "")
+            if (CarNameBox.Text.Trim() == "")
                 CarNameBox.Text = "Название";
         }
 
@@ -60,7 +60,7 @@ namespace PartsWarehouse
 
         private void CarGenerationBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (CarGenerationBox.Text == "")
+            if (CarGenerationBox.Text.Trim() == "")
                 CarGenerationBox.Text = "Поколение";
         }
 
@@ -71,7 +71,7 @@ namespace PartsWarehouse
 
         private void PartTypeBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (PartTypeBox.Text == "")
+            if (PartTypeBox.Text.Trim() == "")
                 PartTypeBox.Text = "Тип запчасти";
         }
 
@@ -82,7 +82,7 @@ namespace PartsWarehouse
 
         private void NameBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (NameBox.Text == "")
+            if (NameBox.Text.Trim() == "")
                 NameBox.Text = "Название запчасти";
         }
 
@@ -93,7 +93,7 @@ namespace PartsWarehouse
 
         private void ModelBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (ModelBox.Text == "")
+            if (ModelBox.Text.Trim() == "")
                 ModelBox.Text = "Модель";
         }
 
@@ -104,7 +104,7 @@ namespace PartsWarehouse
 
         private void OriginalBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (OriginalBox.Text == "")
+            if (OriginalBox.Text.Trim() == "")
                 OriginalBox.Text = "Оригинал: Не важно";
         }
 
@@ -135,16 +135,16 @@ namespace PartsWarehouse
                 foreach (Parts part in list)
                 {
                     BitmapImage img = new BitmapImage();
-                    if (part.Image != null)
+                    if (part.Image == null)
                         img = new BitmapImage(new Uri("../Resources/NotFound.png", UriKind.RelativeOrAbsolute));
-                    //else
-                    //    img = ImagesManip.NewImage(cnt.db.User.Where(item => item.Id == idAuthor).FirstOrDefault());
+                    else
+                        img = ImagesManip.NewImage(part);
                     AddPart(part.Name, part.Description, part.PartNum, img);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                new ErrorWindow("биба").ShowDialog();
+                new ErrorWindow(ex.ToString()).ShowDialog();
             }
 
         }

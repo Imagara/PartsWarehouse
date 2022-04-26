@@ -76,5 +76,16 @@ namespace PartsWarehouse
             }
 
         }
+
+        private void VinBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            VinBox.Text = string.Empty;
+        }
+
+        private void VinBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (VinBox.Text.Trim() == "")
+                VinBox.Text = "Vin...";
+        }
     }
 }
