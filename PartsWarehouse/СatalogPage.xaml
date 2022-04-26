@@ -101,7 +101,6 @@
             </Grid>
         </Border>
 
-
         <ListBox Name="PartsListBox"
                  Grid.Row="1" 
                  Background="#2F3136"
