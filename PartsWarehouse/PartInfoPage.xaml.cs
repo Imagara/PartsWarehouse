@@ -15,14 +15,18 @@ using System.Windows.Shapes;
 
 namespace PartsWarehouse
 {
-    /// <summary>
-    /// Логика взаимодействия для PartInfoPage.xaml
-    /// </summary>
     public partial class PartInfoPage : Page
     {
-        public PartInfoPage()
+        Parts part;
+        public PartInfoPage(int partId)
         {
             InitializeComponent();
+            part = cnt.db.Parts.Where(item => item.IdPart == partId).FirstOrDefault();
+            if (part.Image == null)
+                PartImage.Source = new BitmapImage(new Uri("../Resources/NotFound.png", UriKind.RelativeOrAbsolute));
+            else
+                PartImage.Source = ImagesManip.NewImage(part);
+
         }
     }
 }

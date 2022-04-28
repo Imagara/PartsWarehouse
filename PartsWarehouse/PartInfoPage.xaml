@@ -6,9 +6,45 @@
       xmlns:local="clr-namespace:PartsWarehouse"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PartInfoPage">
+      Title="PartInfoPage"
+      Background="#32353B">
 
-    <Grid>
-        
+    <Grid Background="#2F3136"
+          Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="57*"/>
+                <ColumnDefinition Width="143*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Name="PartImage"
+                       Grid.Column="0"
+                       Margin="10"
+                       Source="/Resources/NotFound.png">
+            </Image>
+
+            <Grid Grid.Column="1"
+                  Margin="10"
+                  Background="#FF44464D">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="22*"/>
+                </Grid.RowDefinitions>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+
+        </Grid>
+
+
+
+
     </Grid>
 </Page>
