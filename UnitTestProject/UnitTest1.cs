@@ -17,15 +17,14 @@ namespace UnitTestProject
         [TestMethod]
         public void LoginTest()
         {
-            string login = "Matrix";
-            string password = "meme3";
+            string login = "Imagara";
+            string password = "imalalka";
             Assert.IsTrue(Functions.LoginCheck(login, password));
         }
         [TestMethod]
         public void IsValidLoginAndPassword()
         {
-            Assert.IsTrue(Functions.IsValidLogAndPass("Matrix", "meme3"));
-            Assert.IsTrue(Functions.IsValidLogAndPass("Imagine", "pizza"));
+            Assert.IsTrue(Functions.IsValidLogAndPass("Imagara", "imalalka"));
             Assert.IsTrue(Functions.IsValidLogAndPass("Login???", "p@ssw0rd"));
             Assert.IsFalse(Functions.IsValidLogAndPass("", ""));
             Assert.IsFalse(Functions.IsValidLogAndPass("", "SimplePass"));
@@ -34,7 +33,7 @@ namespace UnitTestProject
         [TestMethod]
         public void IsLoginAlreadyTaken()
         {
-            Assert.IsTrue(Functions.IsLoginAlreadyTaken("Matrix"));
+            Assert.IsTrue(Functions.IsLoginAlreadyTaken("Imagara"));
             Assert.IsTrue(Functions.IsLoginAlreadyTaken("Imagine"));
             Assert.IsFalse(Functions.IsLoginAlreadyTaken("SimpleLogin"));
             Assert.IsFalse(Functions.IsLoginAlreadyTaken("Login?"));
@@ -43,15 +42,15 @@ namespace UnitTestProject
         [TestMethod]
         public void IsLogEqualPass()
         {
-            Assert.IsFalse(Functions.IsLogEqualPass("Matrix", "Matrix"));
-            Assert.IsTrue(Functions.IsLogEqualPass("Matrix", "meme3"));
+            Assert.IsFalse(Functions.IsLogEqualPass("Imagara", "Imagara"));
+            Assert.IsTrue(Functions.IsLogEqualPass("Imagara", "imalalka"));
         }
         [TestMethod]
         public void IsValidLength()
         {
-            Assert.IsTrue(Functions.IsValidLength("Matrix"));
-            Assert.IsTrue(Functions.IsValidLength("Matrwerwewe"));
-            Assert.IsFalse(Functions.IsValidLength("Ma"));
+            Assert.IsTrue(Functions.IsValidLength("Imagara"));
+            Assert.IsTrue(Functions.IsValidLength("ImaImaggara"));
+            Assert.IsFalse(Functions.IsValidLength("ima"));
             Assert.IsFalse(Functions.IsValidLength(""));
         }
     }

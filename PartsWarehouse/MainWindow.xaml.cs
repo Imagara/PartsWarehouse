@@ -65,8 +65,10 @@ namespace PartsWarehouse
                 {
                     Car car = cnt.db.Car.Where(item => item.IdCar == cnt.db.UserCar.Where(uc => uc.Vin == VinBox.Text).Select(uc => uc.IdCar).FirstOrDefault()).FirstOrDefault();
                     MainFrame.Content = new СatalogPage(car.Company, car.Name, car.Generation);
-                    new ErrorWindow((car.Company, car.Name, car.Generation).ToString()).ShowDialog();
+                    new ErrorWindow($"Найдено: ({car.Company}, {car.Name}, {car.Generation} поколения)").ShowDialog();
                 }
+                else if (VinBox.Text == "Vin..." || VinBox.Text.Trim() == "")
+                    new ErrorWindow("Введите Vin.").ShowDialog();
                 else
                     new ErrorWindow("Ничего не найдено.").ShowDialog();
             }
