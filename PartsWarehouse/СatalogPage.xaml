@@ -107,30 +107,5 @@
                  BorderBrush="{Binding PartsListBox}">
             <ScrollViewer VerticalScrollBarVisibility="Visible"/>
         </ListBox>
-
-        <!--<TextBox Grid.RowSpan="2">
-            <TextBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Vertical" Height="100" />
-                </ItemsPanelTemplate>
-            </TextBox.ItemsPanel>
-
-            <ComboBoxItem Content="Value 1" />
-            <ComboBoxItem Content="Value 2" />
-            <ComboBoxItem Content="Value 3" />
-            <ComboBoxItem Content="Value 4" />
-            <ComboBoxItem Content="Value 5" />
-            <ComboBoxItem Content="Value 6" />
-            <ComboBoxItem Content="Value 7" />
-            <ComboBoxItem Content="Value 8" />
-            <ComboBoxItem Content="Value 9" />
-            <ComboBoxItem Content="Value 10" />
-            <ComboBoxItem Content="Value 11" />
-            <ComboBoxItem Content="Value 12" />
-            <ComboBoxItem Content="Value 13" />
-            <ComboBoxItem Content="Value 14" />
-            <ComboBoxItem Content="Value 15" />
-
-        </TextBox>-->
     </Grid>
 </Page>

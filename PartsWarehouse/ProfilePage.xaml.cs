@@ -21,6 +21,8 @@ namespace PartsWarehouse
         {
             InitializeComponent();
             LoadingCars();
+            User user = cnt.db.User.Where(item => item.IdUser == Session.userId).FirstOrDefault();
+            LoginBox.Text = user.Login;
         }
         private void LoadingCars()
         {
@@ -83,6 +85,11 @@ namespace PartsWarehouse
             messageGrid.Children.Add(carLabel);
 
             CarsListBox.Items.Add(messageGrid);
+        }
+
+        private void ChangePassButton_Click(object sender, RoutedEventArgs e)
+        {
+            new ChangePasswordWindow().ShowDialog();
         }
     }
 }

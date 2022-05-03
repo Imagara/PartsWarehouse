@@ -32,7 +32,7 @@
                                     Width="420">
                             <Label Content="Логин"
                                Foreground="#FFC9C7C7"/>
-                            <TextBox x:Name="EmailBox"
+                            <TextBox x:Name="LoginBox"
                                      Text="UserLogin"
                                      Margin="3,-5,0,0"
                                      Height="30"
@@ -40,11 +40,6 @@
                                      SelectionBrush="{x:Null}"
                                      Background="{x:Null}"/>
                         </StackPanel>
-                        <Button Width="80"
-                                Content="Изменить"
-                                Margin="0,18,0,0"
-                                HorizontalAlignment="Right">
-                        </Button>
                     </StackPanel>
 
 
@@ -56,7 +51,7 @@
                                     Width="420">
                             <Label Content="Пароль"
                                    Foreground="#FFC9C7C7"/>
-                            <TextBox x:Name="BirthdayBox"
+                            <TextBox x:Name="PasswordBox"
                                Text="***********"
                                Margin="3,-5,0,0"
                                Height="30"
@@ -68,7 +63,8 @@
                         <Button Width="80"
                             Content="Изменить"
                             Margin="0,18,0,0"
-                            HorizontalAlignment="Right">
+                            HorizontalAlignment="Right"
+                                Click="ChangePassButton_Click">
                         </Button>
                     </StackPanel>
 

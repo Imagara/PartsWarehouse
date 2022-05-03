@@ -1,23 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PartsWarehouse
 {
-    /// <summary>
-    /// Логика взаимодействия для СatalogPage.xaml
-    /// </summary>
     public partial class СatalogPage : Page
     {
         public СatalogPage(string carCompany = null, string carName = null, int carGeneration = -1)
@@ -112,6 +103,10 @@ namespace PartsWarehouse
         {
             PartsUpdate();
         }
+        private void OpenPartInfoPage(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PartInfoPage(1));
+        }
         private void PartsUpdate()
         {
             try
@@ -139,7 +134,7 @@ namespace PartsWarehouse
                         img = new BitmapImage(new Uri("../Resources/NotFound.png", UriKind.RelativeOrAbsolute));
                     else
                         img = ImagesManip.NewImage(part);
-                    AddPart(part.Name, part.Description, part.PartNum, img);
+                    AddPart(part.Name, part.Description, part.PartNum, img, part.Remain, part.Price);
                 }
             }
             catch (Exception ex)
@@ -148,7 +143,7 @@ namespace PartsWarehouse
             }
 
         }
-        private void AddPart(string name, string desc, int partNum, BitmapImage imageSource)
+        private void AddPart(string name, string desc, int partNum, BitmapImage imageSource, int remain, double price)
         {
             Grid partGrid = new Grid();
             partGrid.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x40, 0x44, 0x4B));
@@ -175,12 +170,13 @@ namespace PartsWarehouse
             partNameLabel.VerticalAlignment = VerticalAlignment.Top;
             partNameLabel.Margin = new Thickness(40, 0, 0, 0);
 
-            Label dateLabel = new Label();
-            dateLabel.Content = partNum.ToString();
-            dateLabel.Foreground = Brushes.White;
+            Label partNumLabel = new Label();
+            partNumLabel.Content = $"модель: {partNum}, остаток {remain} по {price}руб.";
+            partNumLabel.Foreground = Brushes.White;
+            partNumLabel.MouseDown += OpenPartInfoPage;
 
             stackpanel.Children.Add(partNameLabel);
-            stackpanel.Children.Add(dateLabel);
+            stackpanel.Children.Add(partNumLabel);
             partGrid.Children.Add(stackpanel);
 
             Label descLabel = new Label();
