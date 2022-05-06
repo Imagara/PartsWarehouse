@@ -5,15 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PartsWarehouse"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" 
+      d:DesignWidth="800"
       Title="PartInfoPage"
       Background="#32353B">
 
     <Grid Background="#2F3136"
           Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="215*"/>
+            <RowDefinition Height="173*"/>
+            <RowDefinition Height="42*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -23,26 +25,148 @@
             </Grid.ColumnDefinitions>
 
             <Image Name="PartImage"
-                       Grid.Column="0"
-                       Margin="10"
-                       Source="/Resources/NotFound.png">
+                   Grid.Column="0"
+                   Margin="10"
+                   MouseDown="PartImage_MouseDown">
             </Image>
 
             <Grid Grid.Column="1"
                   Margin="10"
                   Background="#FF44464D">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="17*"/>
-                    <RowDefinition Height="22*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0"
+                            Orientation="Horizontal">
+                    <TextBox Name="PartManufacturer"
+                             Text="Производитель"
+                             FontSize="22"
+                             Background="{x:Null}"
+                             BorderBrush="{x:Null}"
+                             MinWidth="50"
+                             PreviewMouseDown="PartManufacturer_PreviewMouseDown"
+                             LostFocus="PartManufacturer_LostFocus">
+                    </TextBox>
+                    <TextBox Name="PartName"
+                         Text="Название детали"
+                         FontSize="22"
+                             MinWidth="50"
+                         Background="{x:Null}"
+                         BorderBrush="{x:Null}"
+                         PreviewMouseDown="PartNameManufacturer_PreviewMouseDown"
+                         LostFocus="PartNameManufacturer_LostFocus">
+                    </TextBox>
+                </StackPanel>
 
+                <StackPanel Grid.Row="1" 
+                            Orientation="Horizontal">
+                    <Label Content="Осталось: "
+                           FontSize="22">
+                    </Label>
+                    <TextBox Name="PartRemain"
+                             MinWidth="35"
+                             Height="35"
+                             FontSize="22"
+                             Background="{x:Null}">
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2"
+                            Orientation="Horizontal">
+                    <Label Content="Цена: "
+                           FontSize="22">
+                    </Label>
+                    <TextBox Name="PartPrice"
+                             MinWidth="35"
+                             Height="35"
+                             FontSize="22"
+                             Background="{x:Null}">
+                    </TextBox>
+                    <Label Content="руб."
+                           FontSize="22">
+                    </Label>
+                </StackPanel>
+                <StackPanel Grid.Row="3"
+                            Orientation="Horizontal">
+                    <Label Content="Модель: "
+                           FontSize="22">
+                    </Label>
+                    <TextBox Name="PartNum"
+                             MinWidth="35"
+                             Height="35"
+                             FontSize="22"
+                             Background="{x:Null}">
+                    </TextBox>
+                </StackPanel>
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="1">
-
+        <Grid Grid.Row="1"
+              Background="#FF44464D">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Name="PartCar"
+                     Grid.Row="0"
+                     Text="Подходит к:"
+                             FontSize="22"
+                             Background="{x:Null}"
+                             BorderBrush="{x:Null}"
+                             MinWidth="50">
+            </TextBox>
+            <TextBox Name="PartType"
+                     Grid.Row="1"
+                     Text="Тип"
+                             FontSize="22"
+                             Background="{x:Null}"
+                             BorderBrush="{x:Null}"
+                             MinWidth="50">
+            </TextBox>
+            <TextBox Name="PartIsOriginal"
+                     Grid.Row="2"
+                     Text="Оригинал/Не оригинал"
+                             FontSize="22"
+                             Background="{x:Null}"
+                             BorderBrush="{x:Null}"
+                             MinWidth="50">
+            </TextBox>
+            
+            <TextBox Name="PartDesc"
+                       Grid.Row="3"
+                       Text="Описание"
+                       PreviewMouseDown="PartDesc_PreviewMouseDown"
+                       LostFocus="PartDesc_LostFocus"
+                       Foreground="{StaticResource TextColor}"
+                     FontSize="22"
+                             Background="{x:Null}"
+                             BorderBrush="{x:Null}"
+                             MinWidth="50">
+            </TextBox>
         </Grid>
 
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center">
+                <Button Width="120"
+                        Margin="5,0,5,0"
+                        Content="Назад"
+                        FontSize="20"
+                        Click="BackButton">
+                </Button>
+                <Button Width="120"
+                        Margin="5,0,5,0"
+                        Content="Сохранить"
+                        FontSize="20"
+                        Click="SaveButton">
+                </Button>
+            </StackPanel>
+
+        </Grid>
 
 
 

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:PartsWarehouse"
         mc:Ignorable="d"
         Title="ErrorWindow" 
-        Height="120" 
+        MinHeight="120" 
+        Height="120"
         Width="300" 
         WindowStartupLocation="CenterScreen" 
         WindowStyle="None" 
@@ -18,9 +19,9 @@
                HorizontalAlignment="Center" 
                Margin="19,10,19,0" 
                VerticalAlignment="Top" 
-               Height="55" 
-               Width="262" 
-               Foreground="White">
+               Width="262"
+                   Background="{x:Null}"
+                   Foreground="{StaticResource TextColor}">
         </TextBlock>
         <Button Content="Закрыть" 
                 VerticalAlignment="Bottom" 
@@ -29,8 +30,5 @@
                 Width="130" 
                 Margin="0,0,0,15" 
                 Click="BackClick"/>
-        <Border BorderBrush="Black"
-                BorderThickness="2">
-        </Border>
     </Grid>
 </Window>

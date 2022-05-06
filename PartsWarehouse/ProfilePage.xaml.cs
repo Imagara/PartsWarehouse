@@ -42,17 +42,21 @@ namespace PartsWarehouse
 
             try
             {
-                Grid addCarGrid = new Grid();
-                addCarGrid.Height = 35;
-                addCarGrid.Width = 485;
-                addCarGrid.Margin = new Thickness(10, 0, 10, 0);
+                Grid addCarGrid = new Grid
+                {
+                    Height = 35,
+                    Width = 485,
+                    Margin = new Thickness(10, 0, 10, 0)
+                };
 
-                Button addCarButton = new Button();
-                addCarButton.Width = 35;
-                addCarButton.Height = 35;
-                addCarButton.FontSize=16;
-                addCarButton.Content = "+";
-                addCarButton.FontWeight = FontWeights.Black;
+                Button addCarButton = new Button
+                {
+                    Width = 35,
+                    Height = 35,
+                    FontSize = 16,
+                    Content = "+",
+                    FontWeight = FontWeights.Black,
+                };
                 addCarButton.Click += AddNewCar;
 
                 CarsListBox.Items.Add(addCarGrid);
@@ -70,17 +74,20 @@ namespace PartsWarehouse
         }
         private void AddCar(string company, string name, int generation, string vin)
         {
-            Grid messageGrid = new Grid();
-            messageGrid.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x44, 0x46, 0x4D));
-            messageGrid.Height = 35;
-            messageGrid.Width = 480;
-            messageGrid.Margin = new Thickness(10, 5, 10, 5);
+            Grid messageGrid = new Grid
+            {
+                Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x44, 0x46, 0x4D)),
+                Height = 35,
+                Width = 480,
+                Margin = new Thickness(10, 5, 10, 5)
+            };
 
-
-            Label carLabel = new Label();
-            carLabel.Content = company + " " + name + " " + generation + "gen." + " (vin: " + vin + ")";
-            carLabel.HorizontalAlignment = HorizontalAlignment.Left;
-            carLabel.Margin = new Thickness(5);
+            Label carLabel = new Label
+            {
+                Content = company + " " + name + " " + generation + "gen." + " (vin: " + vin + ")",
+                HorizontalAlignment = HorizontalAlignment.Left,
+                Margin = new Thickness(5)
+            };
 
             messageGrid.Children.Add(carLabel);
 

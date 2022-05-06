@@ -23,11 +23,13 @@ namespace PartsWarehouse
         public static BitmapImage SelectImage()
         {
             #region Выбор картинки
-            OpenFileDialog op = new OpenFileDialog();
-            op.Title = "Выбрать изображение";
-            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+            OpenFileDialog op = new OpenFileDialog
+            {
+                Title = "Выбрать изображение",
+                Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
                         "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
-                        "Portable Network Graphic (*.png)|*.png";
+                        "Portable Network Graphic (*.png)|*.png"
+            };
             if (op.ShowDialog() == true)
                 return new BitmapImage(new Uri(op.FileName));
             else

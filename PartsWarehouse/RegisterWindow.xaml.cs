@@ -42,7 +42,7 @@ namespace PartsWarehouse
                         Password = Encrypt.GetHash(PassBox.Password),
                     };
                     cnt.db.User.Add(newUser);
-                    cnt.db.SaveChanges(); ;
+                    cnt.db.SaveChanges();
                     new ErrorWindow("Успешная регистрация").ShowDialog();
                     new LoginWindow().Show();
                     this.Close();
