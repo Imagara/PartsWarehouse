@@ -88,6 +88,24 @@ namespace PartsWarehouse
         {
             NavigationService.Navigate(new СatalogPage());
         }
+        private void DeleteButton(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ConfirmationWindow confWindow = new ConfirmationWindow();
+                confWindow.ShowDialog();
+                if (confWindow.answer)
+                {
+                    cnt.db.Parts.Remove(part);
+                    cnt.db.SaveChanges();
+                    NavigationService.Navigate(new СatalogPage());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка удаления записи.");
+            }
+        }
         private void SaveButton(object sender, RoutedEventArgs e)
         {
             if (!newPart)
@@ -120,16 +138,15 @@ namespace PartsWarehouse
                 {
                     string manufacturer = PartCar.Text.Substring(0, PartCar.Text.IndexOf(' ')),
                            name = PartCar.Text.Substring(PartCar.Text.IndexOf(' ') + 1, PartCar.Text.Length - PartCar.Text.IndexOf(' ') - 1);
-                    MessageBox.Show($"|{manufacturer}|{name}|");
                     Parts part = new Parts()
                     {
                         IdPart = cnt.db.Parts.Select(p => p.IdPart).DefaultIfEmpty(0).Max() + 1,
-                        IdCar = cnt.db.Parts.Where(item => item.Car.Company == manufacturer && item.Car.Name == name).Select(item => item.IdCar).FirstOrDefault(),
-                    Type = PartType.Text,
+                        IdCar = cnt.db.Parts.Where(item => item.Car.Company == manufacturer && item.Car.Name == name).Select(item => item.Car.IdCar).FirstOrDefault(),
+                        Type = PartType.Text,
                         Name = PartName.Text,
                         Manufacturer = PartManufacturer.Text,
                         Description = PartDesc.Text,
-                        //Image = PartImage.Source != null ? ImagesManip.BitmapSourceToByteArray((BitmapSource)PartImage.Source) : null,
+                        Image = PartImage.Source != null ? ImagesManip.BitmapSourceToByteArray((BitmapSource)PartImage.Source) : null,
                         Remain = Convert.ToInt32(PartRemain.Text),
                         Price = Convert.ToDouble(PartPrice.Text),
                         PartNum = Convert.ToInt32(PartNum.Text),

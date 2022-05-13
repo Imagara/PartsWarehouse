@@ -160,6 +160,12 @@
                 </Button>
                 <Button Width="120"
                         Margin="5,0,5,0"
+                        Content="Удалить"
+                        FontSize="20"
+                        Click="DeleteButton">
+                </Button>
+                <Button Width="120"
+                        Margin="5,0,5,0"
                         Content="Сохранить"
                         FontSize="20"
                         Click="SaveButton">
