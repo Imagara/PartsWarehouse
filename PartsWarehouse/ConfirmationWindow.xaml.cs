@@ -5,10 +5,9 @@ namespace PartsWarehouse
     public partial class ConfirmationWindow : Window
     {
         public bool answer;
-        public ConfirmationWindow(bool _answer = false)
+        public ConfirmationWindow()
         {
             InitializeComponent();
-            answer = _answer;
         }
         private void YesButton(object sender, RoutedEventArgs e)
         {
