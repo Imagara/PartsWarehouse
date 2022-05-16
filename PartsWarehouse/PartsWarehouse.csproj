@@ -67,6 +67,9 @@
     <Compile Include="Car.cs">
       <DependentUpon>EDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="CarAddWindow.xaml.cs">
+      <DependentUpon>CarAddWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChangePasswordWindow.xaml.cs">
       <DependentUpon>ChangePasswordWindow.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
     <Compile Include="СatalogPage.xaml.cs">
       <DependentUpon>СatalogPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="CarAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChangePasswordWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

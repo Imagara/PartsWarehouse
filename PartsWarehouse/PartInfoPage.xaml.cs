@@ -12,9 +12,15 @@ namespace PartsWarehouse
     {
         Parts part;
         bool newPart;
+        int _model = -1;
         public PartInfoPage(int partId)
         {
             InitializeComponent();
+            if (PartNum.Text.Trim() != "")
+            {
+                _model = Convert.ToInt32(PartNum.Text);
+            }
+
             if (cnt.db.Parts.Select(item => item.IdPart).Contains(partId))
             {
                 newPart = false;
@@ -36,37 +42,41 @@ namespace PartsWarehouse
             else
             {
                 newPart = true;
+                DelBut.Visibility = Visibility.Collapsed;
                 PartImage.Source = new BitmapImage(new Uri("../Resources/Plus.png", UriKind.RelativeOrAbsolute));
             }
         }
 
         private void PartNameManufacturer_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            PartName.Text = string.Empty;
         }
 
         private void PartNameManufacturer_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (PartName.Text.Trim() == "")
+                PartName.Text = "Название детали";
         }
 
         private void PartDesc_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            PartDesc.Text = string.Empty;
         }
 
         private void PartDesc_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (PartDesc.Text.Trim() == "")
+                PartDesc.Text = "Описание";
         }
         private void PartManufacturer_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            PartManufacturer.Text = string.Empty;
         }
 
         private void PartManufacturer_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (PartManufacturer.Text.Trim() == "")
+                PartManufacturer.Text = "Производитель";
         }
 
         private void PartImage_MouseDown(object sender, MouseButtonEventArgs e)
@@ -108,6 +118,18 @@ namespace PartsWarehouse
         }
         private void SaveButton(object sender, RoutedEventArgs e)
         {
+            bool check = false;
+            foreach (char item in PartNum.Text)
+            {
+                if (!char.IsDigit(item))
+                {
+                    check = true;
+                }
+            }
+            if (check)
+                new ErrorWindow("В поле модель можно ввести только цифры").ShowDialog();
+            else if (cnt.db.UserCar.Select(item => item.Vin).Contains(PartNum.Text) && _model != Convert.ToInt32(PartNum.Text))
+                new ErrorWindow("Запчасть с данной моделью уже есть в системе").ShowDialog();
             if (!newPart)
             {
                 try
@@ -162,6 +184,36 @@ namespace PartsWarehouse
                 }
             }
 
+        }
+
+        private void PartRemain_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PartRemain.Text = string.Empty;
+        }
+
+        private void PartPrice_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PartPrice.Text = string.Empty;
+        }
+
+        private void PartNum_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PartNum.Text = string.Empty;
+        }
+
+        private void PartCar_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PartCar.Text = string.Empty;
+        }
+
+        private void PartType_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PartType.Text = string.Empty;
+        }
+
+        private void PartIsOriginal_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PartIsOriginal.Text = string.Empty;
         }
     }
 

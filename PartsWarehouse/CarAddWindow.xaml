@@ -1,4 +1,4 @@
-﻿<Window x:Class="PartsWarehouse.ChangePasswordWindow"
+﻿<Window x:Class="PartsWarehouse.CarAddWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,26 +9,50 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Title="ChangePasswordWindow" 
-        Height="250" 
+        Height="360" 
         Width="400">
     <Grid Background="#FF2D2D2D">
         <StackPanel Orientation="Vertical"
                     Margin="10">
-            <TextBox  x:Name="OldPassBox"
+            <TextBox  x:Name="Manufacturer"
                         Height="50" 
                         Background="#32353B"
-                        Text="Старый пароль"
+                        Text="Производитель"
                         FontSize="20"
                         Foreground="{StaticResource TextColor}"
-                        Margin="0,10,0,10">
+                        Margin="0,10,0,10"
+                      PreviewMouseDown="Manufacturer_PreviewMouseDown"
+                         LostFocus="Manufacturer_LostFocus">
             </TextBox>
-            <TextBox  Name="NewPassBox"
+            <TextBox  Name="Name"
                         Height="50" 
                         Background="#32353B"
-                        Text="Новый пароль"
+                        Text="Название"
                         FontSize="20"
                         Foreground="{StaticResource TextColor}"
-                        Margin="0,10,0,10">
+                        Margin="0,10,0,10"
+                      PreviewMouseDown="Name_PreviewMouseDown"
+                         LostFocus="Name_LostFocus">
+            </TextBox>
+            <TextBox  Name="GenerationBox"
+                        Height="50" 
+                        Background="#32353B"
+                        Text="Поколение"
+                        FontSize="20"
+                        Foreground="{StaticResource TextColor}"
+                        Margin="0,10,0,10"
+                      PreviewMouseDown="GenerationBox_PreviewMouseDown"
+                         LostFocus="GenerationBox_LostFocus">
+            </TextBox>
+            <TextBox  Name="VinBox"
+                        Height="50" 
+                        Background="#32353B"
+                        Text="Vin"
+                        FontSize="20"
+                        Foreground="{StaticResource TextColor}"
+                        Margin="0,10,0,10"
+                      PreviewMouseDown="VinBox_PreviewMouseDown"
+                         LostFocus="VinBox_LostFocus">
             </TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal"
@@ -42,7 +66,7 @@
                 Margin="7,0,7,0"
             Click="BackButton_Click"/>
             <Button 
-            Content="Сохранить" 
+            Content="Создать" 
             Height="40" 
             Width="120" 
                 Margin="7,0,7,0"

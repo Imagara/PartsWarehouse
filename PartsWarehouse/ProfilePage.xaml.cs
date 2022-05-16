@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace PartsWarehouse
 {
@@ -46,6 +38,7 @@ namespace PartsWarehouse
                 {
                     Height = 35,
                     Width = 485,
+                    Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x44, 0x46, 0x4D)),
                     Margin = new Thickness(10, 0, 10, 0)
                 };
 
@@ -59,6 +52,8 @@ namespace PartsWarehouse
                 };
                 addCarButton.Click += AddNewCar;
 
+                addCarGrid.Children.Add(addCarButton);
+
                 CarsListBox.Items.Add(addCarGrid);
             }
             catch (Exception ex)
@@ -70,7 +65,7 @@ namespace PartsWarehouse
         }
         private void AddNewCar(object sender, RoutedEventArgs e)
         {
-
+            new CarAddWindow().ShowDialog();
         }
         private void AddCar(string company, string name, int generation, string vin)
         {

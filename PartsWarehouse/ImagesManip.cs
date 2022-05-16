@@ -46,15 +46,5 @@ namespace PartsWarehouse
             image.EndInit();
             return image;
         }
-
-        //public static BitmapImage NewImage(User user)
-        //{
-        //    MemoryStream ms = new MemoryStream(user.ProfileImgSource);
-        //    BitmapImage image = new BitmapImage();
-        //    image.BeginInit();
-        //    image.StreamSource = ms;
-        //    image.EndInit();
-        //    return image;
-        //}
     }
 }
